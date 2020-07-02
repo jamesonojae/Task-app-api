@@ -5,7 +5,7 @@ const db = require('../db/index');
 
 // get all list of task
 router.get('/lists', (request, response) => {
-  db.query('select * from tasklists', (err, res) => {
+  db.query('select * from lists', (err, res) => {
     if (err) throw err;
     response.status(200).send(res);
   });
