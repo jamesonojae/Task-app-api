@@ -12,9 +12,9 @@ router.get('/lists', (request, response) => {
 });
 
 // get a particular task
-router.get('/:taskId', (request, response) => {
-  const { taskId } = request.params;
-  db.query('select * from tasks where taskId = ?', [taskId], (err, res) => {
+router.get('/:listId', (request, response) => {
+  const { listId } = request.params;
+  db.query('select * from tasks where listId = ?', [listId], (err, res) => {
     if (err) throw err;
     response.status(200).send(res);
   });
