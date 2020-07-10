@@ -1,6 +1,6 @@
 /*
-SQLyog Professional v13.1.1 (64 bit)
-MySQL - 5.7.26 : Database - task
+SQLyog Ultimate v13.1.1 (64 bit)
+MySQL - 10.4.11-MariaDB : Database - task
 *********************************************************************
 */
 
@@ -25,14 +25,20 @@ CREATE TABLE `lists` (
   `listDescription` varchar(100) DEFAULT NULL,
   `createdDateTime` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`listId`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 /*Data for the table `lists` */
 
 insert  into `lists`(`listId`,`listDescription`,`createdDateTime`) values 
 (1,'test one','2020-06-23 22:58:00'),
 (2,'test two','2020-06-28 02:58:10'),
-(3,'Testing front','2020-06-23 22:58:00');
+(3,'Testing front','2020-06-23 22:58:00'),
+(4,'From UI','01/07/2020'),
+(5,'Desktop test','7/3/2020'),
+(15,'List list','ooon'),
+(14,'other','0766'),
+(13,'new list','09/09/20'),
+(12,'new list','09/09/20');
 
 /*Table structure for table `tasks` */
 
@@ -47,23 +53,29 @@ CREATE TABLE `tasks` (
   `taskStatus` varchar(50) DEFAULT NULL,
   `createdDateTime` datetime DEFAULT NULL,
   PRIMARY KEY (`taskId`)
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tasks` */
 
 insert  into `tasks`(`taskId`,`listId`,`taskTitle`,`taskDescription`,`taskType`,`taskStatus`,`createdDateTime`) values 
-(1,NULL,'Good News','my my first','Home','active','2002-02-02 00:00:00'),
-(2,NULL,'Good News','my second',NULL,NULL,'2002-02-02 00:00:00'),
-(3,NULL,'Testing',NULL,NULL,NULL,NULL),
-(4,NULL,'Testing',NULL,NULL,NULL,NULL),
-(5,NULL,'Testing1',NULL,NULL,NULL,NULL),
-(6,NULL,'Testing1',NULL,NULL,NULL,NULL),
-(7,NULL,'Testing1',NULL,NULL,NULL,NULL),
-(8,NULL,'Testing2',NULL,NULL,NULL,NULL),
-(9,NULL,'good one',NULL,NULL,NULL,NULL),
-(10,NULL,'test one',NULL,NULL,NULL,NULL),
-(11,NULL,'Testing front',NULL,NULL,NULL,NULL),
-(12,NULL,'first task','my my first','office','done','2002-02-02 00:00:00');
+(1,7,'Good News','my my first','Home','active','2002-02-02 00:00:00'),
+(2,3,'Good News','my second',NULL,NULL,'2002-02-02 00:00:00'),
+(3,4,'Testing',NULL,NULL,NULL,NULL),
+(4,2,'Testing',NULL,NULL,NULL,NULL),
+(5,4,'Testing1',NULL,NULL,NULL,NULL),
+(6,6,'Testing1',NULL,NULL,NULL,NULL),
+(7,5,'Testing1',NULL,NULL,NULL,NULL),
+(8,6,'Testing2',NULL,NULL,NULL,NULL),
+(9,1,'good one',NULL,NULL,NULL,NULL),
+(10,4,'test one',NULL,NULL,NULL,NULL),
+(11,5,'Testing front',NULL,NULL,NULL,NULL),
+(12,3,'first task','my my first','office','done','2002-02-02 00:00:00'),
+(13,NULL,NULL,NULL,NULL,NULL,NULL),
+(14,NULL,NULL,NULL,NULL,NULL,NULL),
+(15,NULL,NULL,NULL,NULL,NULL,NULL),
+(16,NULL,NULL,NULL,NULL,NULL,NULL),
+(17,1,'www','ssss','ddd','qqq','0000-00-00 00:00:00'),
+(18,9,'My',' new task','office','processing','0000-00-00 00:00:00');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

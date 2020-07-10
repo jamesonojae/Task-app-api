@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 });
 // ---------------------------------------------------------
 
-app.use('/api/v1/tasks', require('./routes/tasks'));
+app.use('/api/v1/lists', require('./routes/tasks'));
 
 app.listen(PORT, () => {
   console.log(`Node Server is running on port ${PORT}`);

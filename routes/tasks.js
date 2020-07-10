@@ -4,7 +4,7 @@ const router = Router();
 const db = require('../db/index');
 
 // get all list of task
-router.get('/lists', (request, response) => {
+router.get('/', (request, response) => {
   db.query('select * from lists', (err, res) => {
     if (err) throw err;
     response.status(200).send(res);
@@ -30,21 +30,22 @@ router.post('/createTask', (request, response) => {
     taskStatus,
     createdDateTime,
   } = request.body;
-
+  console.log(request.body);
   // const
   db.query(
-    `insert into tasks (taskTitle,taskDescription,taskType,taskStatus,createdDateTime) values(?, ?, ?, ?, ?)`,
+    `insert into tasks (listId, taskTitle,taskDescription,taskType,taskStatus,createdDateTime) values(?, ?, ?, ?, ?, ?)`,
     [listId, taskTitle, taskDescription, taskType, taskStatus, createdDateTime],
     (err, res) => {
       if (err) throw err;
-      // console.log(res);
-      response.status(200).send({ message: 'insert sucess' });
+      console.log(res);
+      response.status(200).send({ message: 'Task insert sucess' });
     }
   );
 });
 
 // to create a new list
 router.post('/createList', (request, response) => {
+  console.log(request.body);
   const { listDescription, createdDateTime } = request.body;
 
   // const
